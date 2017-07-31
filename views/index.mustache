@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <p> Word to guess: {{wordToGuess}} </p>
+                <p> letters guessed: {{lettersGuessed}} </p>
+                <p> correct letters: {{correctLetters}} </p>
+                <p> incorrect letters: {{incorrectLetters}} </p>
+                <p> incorrect guesses: {{incorrectGuesses}} </p>
+                <p> correct guesses: {{correctGuesses}} </p>
+                <p> 
+                    {{#errors}}
+                        {{msg}}
+                    {{/errors}} 
+                </p>
+            <main>
+                <h1>Mystery Word</h1>
+                <p class="incorrectGuesses"> Incorrect guesses: {{incorrectGuesses}} </p>
+                <section class="wordDisplay">
+                    {{#wordDisplay}}
+                        <span class="wordCharacter">{{.}}</span>
+                    {{/wordDisplay}}
+                </section>
+                <section class="alphabetDisplay">
+                    {{#alphabetDisplay}}
+                        <span style="color: {{color}};">{{letter}}</span>
+                    {{/alphabetDisplay}}
+                </section>
+                <br>
+                <br>
+                  <p> 
+                    {{#errors}}
+                        {{msg}}
+                    {{/errors}} 
+                </p>
+                <form action="/" method="post">
+                    <div>
+                        <input type="text" name="letterGuessed" autofocus="true">
+                    </div>
+                    <div>
+                        <input style="display: none;" type="submit" value="guess">
+                    </div>
+                </form>
+            </main>
+        </div>
+    </body>
+</html>
