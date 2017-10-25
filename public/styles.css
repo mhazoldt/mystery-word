@@ -1,15 +1,19 @@
 .wrapper {
     border: 1px solid #CCCCCC;
     width: 800px;
-    margin: 0 auto;
+    margin: 10% auto;
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 5px 5px 3px #777777;
 }
 
 .wrapper > p {
     display: none;
     box-sizing: border-box;
 }
+
 
 main {
     border: 0px solid blue;

@@ -365,6 +365,24 @@ exports.nextRound = function(req, res, next) {
         gameData.errors = req.validationErrors()
 
         req.session.letterHasBeenGuessed = true
+
+
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+        let alphabetDisplay = []
+        alphabet.forEach((character) => {
+            if(gameData.correctLetters.indexOf(character.toLowerCase()) != -1) {
+                alphabetDisplay.push({"letter": character, "color": "lime"})
+            } else if(gameData.incorrectLetters.indexOf(character.toLowerCase()) != -1) {
+                alphabetDisplay.push({"letter": character, "color": "red"})
+            } else {
+                alphabetDisplay.push({"letter": character, "color": "#CCCCCC"})
+            }
+            
+        })
+
+        gameData.alphabetDisplay = alphabetDisplay
+
+
         console.log("letter has been guessed rendering index")
         res.render("index", gameData)
 
