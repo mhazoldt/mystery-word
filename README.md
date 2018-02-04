@@ -1,0 +1,2 @@
+## Mystery Word
+This is one of the earlier projects from The Iron Yard. A random word is selected that you have to guess. You have to guess the word one letter at a time without getting 8 letters incorrect.
